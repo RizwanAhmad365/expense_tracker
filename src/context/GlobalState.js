@@ -3,6 +3,7 @@ import AppReducer from "./AppReducer";
 
 const ACTIONS = {
   DELETE: "delete",
+  ADD: "add",
 };
 
 // Initial State
@@ -25,10 +26,17 @@ export const GlobalProvider = ({ children }) => {
   const deleteTransaction = (id) => {
     dispatch({ type: ACTIONS.DELETE, payload: id });
   };
+  const addTransaction = (transaction) => {
+    dispatch({ type: ACTIONS.ADD, payload: transaction });
+  };
 
   return (
     <GlobalContext.Provider
-      value={{ transactions: state.transactions, deleteTransaction }}
+      value={{
+        transactions: state.transactions,
+        deleteTransaction,
+        addTransaction,
+      }}
     >
       {children}
     </GlobalContext.Provider>
