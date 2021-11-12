@@ -6,7 +6,7 @@ const AddTransaction = () => {
   return (
     <>
       <h3>Add new transaction</h3>
-      <form action="">
+      <form action=""> 
         <div className="form-control">
           <label htmlFor="text">Text</label>
           <input
